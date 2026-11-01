@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Run focused study sessions with a Pomodoro timer.">
+  <title>Focus timer - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-protected>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="page-head">
+        <h1 id="page-title">Focus timer</h1>
+        <p>Study in short, focused blocks. Finished sessions are saved and add to your streak.</p>
+      </div>
+      <div class="split split-focus">
+        <section class="card timer-card" aria-labelledby="timer-title">
+          <h2 class="visually-hidden" id="timer-title">Timer</h2>
+          <div class="mode-tabs" role="group" aria-label="Session length">
+            <button class="btn btn-secondary btn-sm" type="button" data-minutes="25" data-mode="Focus" aria-pressed="true">Focus 25</button>
+            <button class="btn btn-secondary btn-sm" type="button" data-minutes="5" data-mode="Short break" aria-pressed="false">Short break 5</button>
+            <button class="btn btn-secondary btn-sm" type="button" data-minutes="15" data-mode="Long break" aria-pressed="false">Long break 15</button>
+            <button class="btn btn-secondary btn-sm" type="button" data-minutes="1" data-mode="Quick test" aria-pressed="false">Quick test 1</button>
+          </div>
+          <div class="timer-ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="track" cx="60" cy="60" r="54" fill="none" stroke-width="8"/>
+              <circle class="progress" id="ring" cx="60" cy="60" r="54" fill="none" stroke-width="8"/>
+            </svg>
+            <div class="timer-time">
+              <span class="digits" id="digits" role="timer" aria-label="Time left">25:00</span>
+              <span class="mode" id="mode-label">Focus</span>
+            </div>
+          </div>
+          <p class="visually-hidden" id="announce" role="status" aria-live="polite"></p>
+          <div class="field timer-subject">
+            <label for="focus-subject">What are you studying?</label>
+            <select class="input" id="focus-subject"><option value="">No subject</option></select>
+          </div>
+          <div class="timer-controls">
+            <button class="btn btn-lg" type="button" id="start-btn">Start</button>
+            <button class="btn btn-secondary btn-lg" type="button" id="reset-btn">Reset</button>
+          </div>
+          <div class="field mt-md">
+            <label class="check"><input type="checkbox" id="sound-toggle" checked> Play a soft sound when time is up</label>
+          </div>
+          <p class="hint">Tip: the Quick test 1 mode finishes in one minute, handy for a demo.</p>
+        </section>
+
+        <div class="stack">
+          <section class="card" aria-labelledby="today-title">
+            <h2 id="today-title">Today</h2>
+            <dl class="grid stat-list">
+              <div><dt class="hint">Focus minutes today</dt><dd class="stat-big" id="today-min">0</dd></div>
+              <div><dt class="hint">Study streak</dt><dd class="stat-big" id="streak">0 days</dd></div>
+            </dl>
+          </section>
+          <section class="card" aria-labelledby="recent-title">
+            <h2 id="recent-title">Recent sessions</h2>
+            <div id="recent"><p class="loading">Loading...</p></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/focus.js"></script>
+</body>
+</html>

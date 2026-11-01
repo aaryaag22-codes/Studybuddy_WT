@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revise with flashcards made from your quizzes.">
+  <title>Flashcards - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-protected>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="page-head">
+        <h1 id="page-title">Flashcards</h1>
+        <p>Every quiz question becomes a flashcard. Read the question, say the answer out loud, then flip the card to check.</p>
+      </div>
+      <div class="deck-wrap">
+        <div class="filter-bar" id="deck-form" role="group" aria-label="Choose a deck">
+          <div class="field flex-1">
+            <label for="deck-select">Choose a deck</label>
+            <select class="input" id="deck-select"></select>
+          </div>
+          <div class="field flex-none">
+            <button class="btn btn-secondary" type="button" id="shuffle-btn">Shuffle cards</button>
+          </div>
+        </div>
+        <p class="visually-hidden" id="card-announce" role="status" aria-live="polite"></p>
+        <div id="deck-area"><p class="loading">Loading decks...</p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/flashcards.js"></script>
+</body>
+</html>

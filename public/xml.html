@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Export and import your notes as XML and subscribe to the RSS feed.">
+  <title>XML tools - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-protected>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="page-head">
+        <h1 id="page-title">XML tools</h1>
+        <p>XML is a plain text format that both people and programs can read. Use it to back up your notes, move them between accounts, or share them as a feed.</p>
+      </div>
+      <div class="grid grid-2">
+        <section class="card" aria-labelledby="export-title">
+          <h2 id="export-title">Export your notes</h2>
+          <p>Download every note you wrote as one XML file.</p>
+          <button class="btn" type="button" id="export-btn">Download notes.xml</button>
+          <p id="export-status" class="hint" role="status"></p>
+        </section>
+        <section class="card" aria-labelledby="import-title">
+          <h2 id="import-title">Import notes from XML</h2>
+          <div id="import-alert" class="form-alert" role="alert"></div>
+          <form id="import-form" novalidate>
+            <div class="field">
+              <label for="xml-file">XML file *</label>
+              <input class="input" id="xml-file" type="file" accept=".xml,application/xml,text/xml" required aria-describedby="xml-file-hint xml-file-error">
+              <p id="xml-file-hint" class="hint">Use a file exported from StudyBuddy. Maximum 1 MB and 100 notes.</p>
+              <p id="xml-file-error" class="error"></p>
+            </div>
+            <div id="preview" class="hint" role="status"></div>
+            <button class="btn" type="submit" id="import-btn">Import notes</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="card section" aria-labelledby="feed-title">
+        <h2 id="feed-title">Public RSS feed</h2>
+        <p>Notes you choose to share appear in a public feed that any feed reader can follow. Private notes never appear.</p>
+        <p><a class="btn btn-secondary" href="/feed.xml">Open the feed</a></p>
+      </section>
+
+      <section class="card section" aria-labelledby="format-title">
+        <h2 id="format-title">What the file looks like</h2>
+        <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;notes owner="riya@college.edu"&gt;
+  &lt;note&gt;
+    &lt;title&gt;Normalisation in one page&lt;/title&gt;
+    &lt;subject&gt;DBMS&lt;/subject&gt;
+    &lt;body&gt;1NF: every cell holds one value...&lt;/body&gt;
+    &lt;created&gt;2026-11-02&lt;/created&gt;
+  &lt;/note&gt;
+&lt;/notes&gt;</code></pre>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/xml.js"></script>
+</body>
+</html>

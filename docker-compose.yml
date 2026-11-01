@@ -1,0 +1,11 @@
+# Optional: run MongoDB on your own computer with Docker.   docker compose up -d
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - studybuddy-data:/data/db
+volumes:
+  studybuddy-data:

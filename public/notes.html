@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Save, search and share study notes.">
+  <title>Notes - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-protected>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="page-head">
+        <h1 id="page-title">Notes library</h1>
+        <p>Save your notes, search everything in seconds, and share the helpful ones with other students.</p>
+      </div>
+
+      <section class="card mb-lg" aria-labelledby="add-note-title">
+        <h2 id="add-note-title">Add a note</h2>
+        <p class="required-note">Fields marked with * are required.</p>
+        <div id="note-alert" class="form-alert" role="alert"></div>
+        <form id="note-form" novalidate>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="note-title">Title *</label>
+              <input class="input" id="note-title" type="text" required maxlength="120" aria-describedby="note-title-error">
+              <p id="note-title-error" class="error"></p>
+            </div>
+            <div class="field">
+              <label for="note-subject">Subject *</label>
+              <input class="input" id="note-subject" type="text" required maxlength="40" list="subject-options" aria-describedby="note-subject-hint note-subject-error">
+              <datalist id="subject-options"></datalist>
+              <p id="note-subject-hint" class="hint">For example DBMS</p>
+              <p id="note-subject-error" class="error"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="note-body">Note *</label>
+            <textarea class="input" id="note-body" required maxlength="5000" aria-describedby="note-body-error"></textarea>
+            <p id="note-body-error" class="error"></p>
+          </div>
+          <div class="field">
+            <label for="note-link">Useful link</label>
+            <input class="input" id="note-link" type="url" maxlength="300" aria-describedby="note-link-hint note-link-error">
+            <p id="note-link-hint" class="hint">Optional. Must start with https://</p>
+            <p id="note-link-error" class="error"></p>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="note-shared"> Share this note with other students</label>
+          </div>
+          <button class="btn" type="submit">Save note</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="browse-title">
+        <h2 id="browse-title">Browse notes</h2>
+        <form class="filter-bar" id="search-form" role="search" aria-label="Search notes">
+          <div class="field flex-2">
+            <label for="search-q">Search notes</label>
+            <input class="input" id="search-q" type="search" aria-describedby="search-hint">
+            <p id="search-hint" class="hint">Looks in the title, text and subject.</p>
+          </div>
+          <div class="field">
+            <label for="search-scope">Whose notes</label>
+            <select class="input" id="search-scope">
+              <option value="all">Mine and shared</option>
+              <option value="mine">Only mine</option>
+              <option value="shared">Shared by others</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="search-subject">Subject</label>
+            <select class="input" id="search-subject"><option value="">All subjects</option></select>
+          </div>
+          <div class="field flex-none">
+            <button class="btn" type="submit">Search</button>
+          </div>
+        </form>
+        <p class="hint" id="note-count" role="status"></p>
+        <div id="notes"><p class="loading">Loading notes...</p></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/notes.js"></script>
+</body>
+</html>

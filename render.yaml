@@ -1,0 +1,17 @@
+# Render "Blueprint": tells Render how to run StudyBuddy.
+# Render dashboard -> New -> Blueprint -> pick your GitHub repo.
+services:
+  - type: web
+    name: studybuddy
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/auth/me
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false            # you paste your Atlas connection string in the Render dashboard
+      - key: SESSION_SECRET
+        generateValue: true    # Render creates a random secret for you

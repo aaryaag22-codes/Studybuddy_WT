@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan your subjects and tasks.">
+  <title>Planner - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-protected>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="page-head">
+        <h1 id="page-title">Planner</h1>
+        <p>Add your subjects, then break your work into tasks with due dates.</p>
+      </div>
+      <div class="split">
+        <div class="stack">
+          <section class="card" aria-labelledby="add-task-title">
+            <h2 id="add-task-title">Add a task</h2>
+            <p class="required-note">Fields marked with * are required.</p>
+            <div id="task-alert" class="form-alert" role="alert"></div>
+            <form id="task-form" novalidate>
+              <div class="field">
+                <label for="task-title">Task *</label>
+                <input class="input" id="task-title" name="title" type="text" required maxlength="120" aria-describedby="task-title-error">
+                <p id="task-title-error" class="error"></p>
+              </div>
+              <div class="field">
+                <label for="task-subject">Subject</label>
+                <select class="input" id="task-subject" name="subject"><option value="">No subject</option></select>
+              </div>
+              <div class="field">
+                <label for="task-due">Due date</label>
+                <input class="input" id="task-due" name="dueDate" type="date" aria-describedby="task-due-hint">
+                <p id="task-due-hint" class="hint">Optional. Pick a day from the calendar or type it.</p>
+              </div>
+              <div class="field">
+                <label for="task-priority">Priority</label>
+                <select class="input" id="task-priority" name="priority">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <button class="btn" type="submit">Add task</button>
+            </form>
+          </section>
+
+          <section class="card" aria-labelledby="subject-title">
+            <h2 id="subject-title">Subjects</h2>
+            <div id="subject-alert" class="form-alert" role="alert"></div>
+            <form id="subject-form" novalidate>
+              <div class="field">
+                <label for="subject-name">New subject *</label>
+                <input class="input" id="subject-name" name="name" type="text" required maxlength="40" aria-describedby="subject-name-hint subject-name-error">
+                <p id="subject-name-hint" class="hint">For example Operating Systems</p>
+                <p id="subject-name-error" class="error"></p>
+              </div>
+              <fieldset>
+                <legend>Colour</legend>
+                <div class="swatches" id="swatches"></div>
+              </fieldset>
+              <button class="btn btn-secondary" type="submit">Add subject</button>
+            </form>
+            <ul class="list-plain" id="subject-list" aria-label="Your subjects"></ul>
+          </section>
+        </div>
+
+        <section aria-labelledby="tasks-title">
+          <div class="row row-between">
+            <h2 id="tasks-title">Your tasks</h2>
+            <p class="hint" id="task-count" role="status"></p>
+          </div>
+          <div class="filter-bar" id="filter-form" role="group" aria-label="Filter tasks">
+            <div class="field">
+              <label for="filter-subject">Show subject</label>
+              <select class="input" id="filter-subject"><option value="">All subjects</option></select>
+            </div>
+            <div class="field">
+              <label for="filter-status">Show status</label>
+              <select class="input" id="filter-status">
+                <option value="">All tasks</option>
+                <option value="pending">Still to do</option>
+                <option value="done">Completed</option>
+              </select>
+            </div>
+          </div>
+          <div id="tasks"><p class="loading">Loading your tasks...</p></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a free StudyBuddy account.">
+  <title>Create an account - StudyBuddy</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body data-guest-only>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container">
+      <div class="auth-wrap">
+        <section class="card auth-card" aria-labelledby="page-title">
+          <h1 id="page-title">Create your account</h1>
+          <p>It takes less than a minute.</p>
+          <p class="required-note">Fields marked with * are required.</p>
+          <div id="form-alert" class="form-alert" role="alert"></div>
+          <form id="register-form" novalidate>
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input class="input" id="name" name="name" type="text" required autocomplete="name" aria-describedby="name-error">
+              <p id="name-error" class="error"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input class="input" id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-hint email-error">
+              <p id="email-hint" class="hint">For example riya@college.edu</p>
+              <p id="email-error" class="error"></p>
+            </div>
+            <div class="field">
+              <label for="password">Password *</label>
+              <input class="input" id="password" name="password" type="password" required minlength="8" autocomplete="new-password" aria-describedby="password-hint password-error">
+              <p id="password-hint" class="hint">At least 8 characters, with a letter and a number.</p>
+              <p id="password-error" class="error"></p>
+            </div>
+            <div class="field">
+              <label for="confirm">Confirm password *</label>
+              <input class="input" id="confirm" name="confirm" type="password" required autocomplete="new-password" aria-describedby="confirm-error">
+              <p id="confirm-error" class="error"></p>
+            </div>
+            <div class="field">
+              <label class="check"><input type="checkbox" id="show-password"> Show passwords</label>
+            </div>
+            <button class="btn btn-lg" type="submit" id="submit-btn">Create account</button>
+          </form>
+          <p class="hint">Already registered? <a href="login.html">Log in</a></p>
+        </section>
+        <aside class="auth-side" aria-labelledby="side-title">
+          <h2 id="side-title">What you get</h2>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A dashboard with your progress at a glance</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Light, dark and high contrast themes</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Works with a keyboard and a screen reader</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="js/register.js"></script>
+</body>
+</html>
