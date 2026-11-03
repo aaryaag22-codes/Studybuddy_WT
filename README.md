@@ -6,9 +6,9 @@ Built with **HTML, CSS, JavaScript, XML, Node.js (Express) and MongoDB** as a B.
 
 | | |
 |---|---|
-| Team | Member A: _[name, roll no.]_, Member B: _[name, roll no.]_ |
-| GitHub | _[paste your repository link]_ |
-| Live site | _[paste your Render link after deployment]_ |
+| Team | Member A: _[Aarya Agarwal, 11]_, Member B: _[Ishi Pandeya, 31]_ |
+| GitHub | _https://github.com/aaryaag22-codes/Studybuddy_WT |
+| Live site | _https://studybuddy-frh8.onrender.com_ |
 
 ## Quick start in VS Code
 
